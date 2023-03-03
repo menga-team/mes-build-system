@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+
+.vmes/*
+!.vmes/CMakeLists.txt
+!.vmes/Virtual-MES
+game

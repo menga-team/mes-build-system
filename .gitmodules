@@ -1,0 +1,3 @@
+[submodule ".vmes/Virtual-MES"]
+	path = .vmes/Virtual-MES
+	url = https://github.com/menga-team/Virtual-MES
