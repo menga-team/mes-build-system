@@ -1,3 +1,9 @@
 [submodule ".vmes/Virtual-MES"]
 	path = .vmes/Virtual-MES
 	url = https://github.com/menga-team/Virtual-MES
+[submodule ".udynlink"]
+	path = .udynlink
+	url = https://github.com/menga-team/udynlink.git
+[submodule ".mes"]
+	path = .mes
+	url = https://github.com/menga-team/MES.git
