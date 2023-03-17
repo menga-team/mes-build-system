@@ -5,7 +5,7 @@ INCLUDES	= -I.mes/include -I.mes/cpu/mescpu
 src/%.asset: $(wildcard assets/*)
 	for file in $^ ; do \
 		base=$$(basename $${file}) ; \
-		python asset_packer.py $${file} > src/$${base}.asset ; \
+		python .asset_packer.py $${file} > src/$${base}.asset ; \
 	done
 
 $(PROJECT).bin: $(CFILES) src/%.asset
