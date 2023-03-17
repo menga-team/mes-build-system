@@ -1,6 +1,13 @@
 # MES-Template
 A plug and play MES project template.
 
+## Installation
+
+After cloning the repository, initialize the needed git submodules.
+```shell
+git submodule update --init
+```
+
 ## Usage
 
 ### Simulate
