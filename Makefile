@@ -11,8 +11,20 @@ src/%.asset: $(wildcard assets/*)
 $(PROJECT).bin: $(CFILES) src/%.asset
 	.udynlink/scripts/mkmodule --name "$(PROJECT)" --includes "$(INCLUDES)" $(CFILES)
 
-$(PROJECT).iso: $(MODULE_NAME).bin
+$(PROJECT).iso: $(PROJECT).bin
 	@echo UNIMPLEMENTED
+
+flash-setup:
+	cd .mes/; git submodule update --init
+	cd .mes/libopencm3; make
+	touch .mes/cpu/mescpu/bin/symbols.inc
+	cd .mes/cpu/mescpu; make mescpu.elf
+	cd .mes/cpu/mescpu; python extract_symbols.py mescpu.elf > bin/symbols.inc
+
+
+flash: $(PROJECT).bin
+	python .mes/cpu/mescpu/create_dummy_game.py $(PROJECT).bin > .mes/cpu/mescpu/dummy_game.h
+	cd .mes/cpu/mescpu; make flash
 
 clean:
 	-rm src/*.asset
