@@ -1,5 +1,5 @@
 # MES-Template
-A plug and play MES project template.
+A "clone and go" MES project template.
 
 ## Installation
 
