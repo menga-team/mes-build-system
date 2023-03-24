@@ -19,4 +19,20 @@ make simulate
 ```
 
 ### Upload
-// todo
+To test your game on real hardware you can use the `flash` target.
+
+In order to flash your game you first need to enter:
+
+```shell
+make flash-setup
+```
+
+This will prepare everything for using `make flash`, if you update the
+MES submodule you might need to do it again.
+
+```shell
+make flash
+```
+
+After that you can just use `make flash` and upload your game to the
+CPU.
