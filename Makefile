@@ -2,6 +2,16 @@ PROJECT		= mes-template
 CFILES		= $(wildcard src/*.c)
 INCLUDES	= -I.mes/include -I.mes/cpu/mescpu
 
+update:
+	@echo "Updating submodules..."
+	cd .mes/; git pull origin main
+	cd .udynlink/; git pull origin master
+	cd .vmes/Virtual-MES/; git pull origin main
+	@echo "Updating files..."
+	curl "https://raw.githubusercontent.com/menga-team/MES-Template/main/.vmes/CMakeLists.txt" -o .vmes/CMakeLists.txt
+	curl "https://raw.githubusercontent.com/menga-team/MES-Template/main/.asset_packer.py" -o .asset_packer.py
+	curl "https://raw.githubusercontent.com/menga-team/MES-Template/main/Makefile" -o Makefile
+
 src/%.asset: $(wildcard assets/*)
 	for file in $^ ; do \
 		base=$$(basename $${file}) ; \
