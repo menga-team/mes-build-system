@@ -5,7 +5,7 @@ project(vmes)
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(Virtual-MES/include)
-set(VMES_SOURCES Virtual-MES/src/vmes.c Virtual-MES/src/gpu.c Virtual-MES/src/controller.c Virtual-MES/src/timer.c)
+set(VMES_SOURCES Virtual-MES/src/vmes.c Virtual-MES/src/gpu.c Virtual-MES/src/input.c Virtual-MES/src/timer.c)
 
 file(GLOB GAME_SOURCES "../src/*.c")
 add_executable(game ${GAME_SOURCES} ${VMES_SOURCES})
