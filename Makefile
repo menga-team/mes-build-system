@@ -37,5 +37,4 @@ clean:
 assets: ../src/%.asset
 
 simulate:
-	cd vmes; cmake .; make; cp game ../../game
-	./../game
+	cd vmes; cmake .; make && cp game ../../game && ./../../game
