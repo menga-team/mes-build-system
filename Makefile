@@ -1,6 +1,6 @@
 PROJECT		= game
 CFILES		= $(wildcard ../src/*.c)
-INCLUDES	= -I../.mes/include -I../.mes/cpu/mescpu
+INCLUDES	= -I../.mes/include -I../.mes/cpu/mescpu -I../.mes/cpu/mescpu/TinyMT/tinymt
 
 ../src/%.asset: $(wildcard ../assets/*)
 	for file in $^ ; do \
