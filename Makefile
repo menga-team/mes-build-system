@@ -26,7 +26,7 @@ iso: ../$(PROJECT).iso
 
 flash-setup:
 	cd ../.mes/; git submodule update --init
-	cd ../.mes/libopencm3; make
+	cd ../.mes/libopencm3; make TARGETS='stm32/f1'
 	mkdir -p ../.mes/cpu/mescpu/bin
 	touch ../.mes/cpu/mescpu/bin/symbols.inc
 	cd ../.mes/cpu/mescpu; make mescpu.elf
