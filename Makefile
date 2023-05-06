@@ -20,6 +20,7 @@ iso: ../$(PROJECT).iso
 
 ../assets/icon.m3ifp: ../icon.png
 	mkdir -p ../assets
+	python3 update_colormap.py
 	cd ../.mes/gpu/image2mes; cargo run -- -i ../../../icon.png -c '$(shell jq .sd_information.colormap ../mesproj.json -c)' -t bin -e -o ../../../assets/icon_full.m3ifp
 	convert ../icon.png -crop 29x26+3+6 ../assets/icon_cropped.png
 	cd ../.mes/gpu/image2mes; cargo run -- -i ../../../assets/icon_cropped.png -c '$(shell jq .sd_information.colormap ../mesproj.json -c)' -t bin -e -o ../../../assets/icon.m3ifp
