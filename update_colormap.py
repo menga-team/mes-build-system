@@ -39,7 +39,7 @@ find_colors()
 
 json_data = {}
 for i in range(len(colors)):
-    json_data[colors[i]] = i
+    json_data[colors[i] + "_" + str(i)] = i
 
 print(json_data)
 
